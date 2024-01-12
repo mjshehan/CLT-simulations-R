@@ -1672,7 +1672,9 @@ random variables ~ <span class="math inline">\(\chi^2_{(df=n)}\)</span></p>
 xz = &quot;Sum of Z Squared&quot;
 
 #hist df 1
-hist((z_sqs[,1]), breaks = 10, prob = T, main = &quot;Histogram of n = 1 Z-Squared Sums (50 repetitions)&quot;, xlab = xz)
+hist((z_sqs[,1]), breaks = 10, prob = T, 
+     main = &quot;Histogram of n = 1 Z-Squared Sums (50 repetitions)&quot;, 
+     xlab = xz)
 x &lt;- seq(min(z_sqs[,1]),max(z_sqs[,1]), length = 50)
 y &lt;- dchisq(x, df = 1)
 lines(x,y, col = &quot;blue&quot;, lwd = 2, lty = &quot;dashed&quot;)
@@ -1685,7 +1687,11 @@ legend(x = &quot;topright&quot;,          # Position
        bty=&quot;n&quot;)
 
 #hist of df 10
-hist(rowSums(z_sqs[,1:10]), breaks = 10, prob = T,main = &quot;Histogram of n = 10 Z-Squared Sums (50 repetitions)&quot;, xlab = xz)
+hist(rowSums(z_sqs[,1:10]), 
+     breaks = 10, 
+     prob = T,
+     main = &quot;Histogram of n = 10 Z-Squared Sums (50 repetitions)&quot;, 
+     xlab = xz)
 lines(dchisq(0:35, 10), col = &quot;blue&quot;, lwd = 2, lty = &quot;dashed&quot;)
 legend(x = &quot;topright&quot;,          # Position
        legend = &quot;Chi Square PDF, df 10&quot;,  # Legend texts
@@ -1696,7 +1702,10 @@ legend(x = &quot;topright&quot;,          # Position
        bty=&quot;n&quot;)
 
 #hist df 20
-hist(rowSums(z_sqs[,1:20]), breaks = 10, prob = T,main = &quot;Histogram of n = 20 Z-Squared Sums (50 repetitions)&quot;, xlab = xz)
+hist(rowSums(z_sqs[,1:20]), 
+     breaks = 10, prob = T,
+     main = &quot;Histogram of n = 20 Z-Squared Sums (50 repetitions)&quot;, 
+     xlab = xz)
 lines(dchisq(0:35, 20), col = &quot;blue&quot;, lwd = 2, lty = &quot;dashed&quot;)
 legend(x = &quot;topright&quot;,          # Position
        legend = &quot;Chi Square PDF, df 20&quot;,  # Legend texts
@@ -1708,7 +1717,8 @@ legend(x = &quot;topright&quot;,          # Position
 
 #hist df 30
 hist(rowSums(z_sqs[,1:30]), ylim = c(0, 0.06), breaks = 12,prob = T,
-     main = &quot;Histogram of n = 30 Z-Squared Sums (50 repetitions)&quot;, xlab = xz)
+     main = &quot;Histogram of n = 30 Z-Squared Sums (50 repetitions)&quot;, 
+     xlab = xz)
 lines(dchisq(0:50, 30), col = &quot;blue&quot;, lwd = 2, lty = &quot;dashed&quot;)
 legend(x = &quot;topright&quot;,          # Position
        legend = &quot;Chi Square PDF, df 30&quot;,  # Legend texts
@@ -1719,7 +1729,10 @@ legend(x = &quot;topright&quot;,          # Position
        bty=&quot;n&quot;)
 
 #hist df 40
-hist(rowSums(z_sqs[,1:40]), breaks = 12, prob = T,main = &quot;Histogram of n = 40 Z-Squared Sums (50 repetitions)&quot;, xlab = xz)
+hist(rowSums(z_sqs[,1:40]), 
+     breaks = 12, prob = T,
+     main = &quot;Histogram of n = 40 Z-Squared Sums (50 repetitions)&quot;, 
+     xlab = xz)
 lines(dchisq(0:60, 40),col = &quot;blue&quot;, lwd = 2, lty = &quot;dashed&quot;)
 legend(x = &quot;topright&quot;,          # Position
        legend = &quot;Chi Square PDF, df 40&quot;,  # Legend texts
@@ -1730,7 +1743,11 @@ legend(x = &quot;topright&quot;,          # Position
        bty=&quot;n&quot;)
 
 #hist df 50
-hist(rowSums(z_sqs[,1:50]), breaks = 14, prob = T,main = &quot;Histogram of n = 50 Z-Squared Sums (50 repetitions)&quot;, xlab = xz)
+hist(rowSums(z_sqs[,1:50]), 
+     breaks = 14, 
+     prob = T,
+     main = &quot;Histogram of n = 50 Z-Squared Sums (50 repetitions)&quot;, 
+     xlab = xz)
 lines(dchisq(0:80, 50), col = &quot;blue&quot;, lwd = 2, lty = &quot;dashed&quot;)
 legend(x = &quot;topright&quot;,          # Position
        legend = &quot;Chi Square PDF, df 50&quot;,  # Legend texts
@@ -1775,8 +1792,10 @@ for(i in 1:50){
 #plot histograms
 
 layout(matrix(c(1, 2), nrow=2, ncol=2, byrow=TRUE), widths = c(10,10)) 
-hist(sn, main = &quot;Histogram of Sn for n = 50 Z^2 Random Variables&quot;,  prob = T)
-lines(dnorm(0:100, mean = 50, sd = 10), col = &quot;blue&quot;, lwd = 2, lty = &quot;dashed&quot;)
+hist(sn, main = &quot;Histogram of Sn for n = 50 Z^2 Random Variables&quot;,  
+     prob = T)
+lines(dnorm(0:100, mean = 50, sd = 10), 
+      col = &quot;blue&quot;, lwd = 2, lty = &quot;dashed&quot;)
 legend(x = &quot;topright&quot;,          # Position
        legend = &quot;Normal(50, 10) PDF&quot;,  # Legend texts
        lty = 2,           # Line types
@@ -1785,8 +1804,13 @@ legend(x = &quot;topright&quot;,          # Position
        cex = .75,
        bty=&quot;n&quot;)
 
-hist(z2_std, main =&quot;Histogram for Sn Standardized by CLT&quot;, prob = T, xlab = &quot;Standardized Sn&quot;)
-lines(x=seq(-3,3, length=100), y = dnorm(x=seq(-3,3, length=100), mean = 0, sd = 1), col = &quot;blue&quot;, lwd = 2, lty = &quot;dashed&quot;)
+hist(z2_std, 
+     main =&quot;Histogram for Sn Standardized by CLT&quot;, 
+     prob = T, 
+     xlab = &quot;Standardized Sn&quot;)
+lines(x=seq(-3,3, length=100), 
+      y = dnorm(x=seq(-3,3, length=100), mean = 0, sd = 1), 
+      col = &quot;blue&quot;, lwd = 2, lty = &quot;dashed&quot;)
 legend(x = &quot;topright&quot;,          # Position
        legend = &quot;Normal(0, 1) PDF&quot;,  # Legend texts
        lty = 2,           # Line types
