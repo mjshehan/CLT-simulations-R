@@ -25,7 +25,7 @@ We will demonstrate this property in two directions:
 
 ## Generating $Z^{2}$ Random Variables
 
-We generate the simulation using 50 repetitions for each of 50 $Z^{2}$ random variables, $Z_{1}^{2}, Z_{2}^{2},...,Z_{50}^{2}$, where $Z_{1}, Z_{2}...Z_{n}$ iid $\sim N(0,1)$
+We generate the simulation using 50 repetitions for each of 50 $Z^{2}$ random variables, $Z_{1}^{2}, Z_{2}^{2},...,Z_{50}^{2}$, where $Z_{1}, Z_{2}...Z_{n}$ iid $\sim N(0,1) $
 
 
 ```{r Generate Random Variables}
